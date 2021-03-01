@@ -31,8 +31,8 @@ namespace SystemStatusClientConsole
             // Remember to set the boolean parameter to true or false depending in whether the user is in AD.
             var userContext = MultiEnvironment.CreateSingleServerUserContext(userName, password, true, serverUri);
 
-            bool loginSuceeded = MultiEnvironment.LoginUserContext(userContext);
-            if (loginSuceeded == false)
+            bool loginSucceeded = MultiEnvironment.LoginUserContext(userContext);
+            if (loginSucceeded == false)
             {
                 Console.WriteLine("Failed to login to: " + serverUri);
                 Console.WriteLine("");
@@ -58,14 +58,14 @@ namespace SystemStatusClientConsole
 
 
             // Register for particular events. Feel free to add identifiers for other events.
-            // IMPORTANT: The sessions must be started using the CreateAndStartSessions() method before you can subsribe to any events.
+            // IMPORTANT: The sessions must be started using the CreateAndStartSessions() method before you can subscribe to any events.
             multiSession.SetSubscribedEventsOnCreatedSessions(new HashSet<Guid>
                 {
                     KnownStatusEvents.MotionStarted,
                     KnownStatusEvents.MotionStopped
                 });
 
-            // Subscribe to recieve notification when the configuration has changed.
+            // Subscribe to receive notification when the configuration has changed.
             multiSession.SubscribeToConfigurationChanges(true);
 
             // Subscribe to state changes on all devices of type camera.

@@ -84,7 +84,7 @@ namespace StatusSessionConsole
                 // Start the session with the Recording Server
                 statusApi.StartSession();
 
-                // Susbcribe to events
+                // Subscribe to events
                 statusApi.SetSubscribedEvents(subscribedEvents);
 
                 // Subscribe to camera found
@@ -166,7 +166,7 @@ namespace StatusSessionConsole
             VideoOS.Platform.SDK.Environment.AddServer(uri, CredentialCache.DefaultNetworkCredentials);
 
             // If you need different credentials than the user that runs the sample, please comment out the line above and
-            // uncomment the line below and set the approproiate username and password.
+            // uncomment the line below and set the appropriate username and password.
             //VideoOS.Platform.SDK.Environment.AddServer(uri, new NetworkCredential("username", "password"));
 
 			try
